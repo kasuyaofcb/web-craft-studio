@@ -1,0 +1,21 @@
+{
+  "name": "github-issue-creator",
+  "version": "1.0.0",
+  "description": "模写コーディングフェーズ用のIssue一括作成スクリプト",
+  "main": "create-markup-issues.js",
+  "scripts": {
+    "create-issues": "node create-markup-issues.js"
+  },
+  "keywords": [
+    "github",
+    "issues",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^20.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
+
