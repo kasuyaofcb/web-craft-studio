@@ -75,15 +75,51 @@
 
 ## 🔧 作業の流れ
 
-1. **ブランチの作成**（Issueにアサインされたらすぐ）
-2. **デザインカンプの確認**
-3. **ファイルの作成**（必要な場合）
-4. **HTML構造の設計**
-5. **SCSS実装**
-6. **JavaScript実装**（必要に応じて）
-7. **レスポンシブ対応**
-8. **動作確認**
-9. **コミット・PR作成**
+1. **作業開始前の確認**
+   - [ ] ブランチが作成されているか確認（`git branch` で現在のブランチを確認）
+   - [ ] 最新のmainブランチを取得（`git pull origin main`）
+   - [ ] Live Sass Compilerが起動しているか確認（VS Codeのステータスバーに「Watching...」と表示されているか）
+   - [ ] デザインカンプを確認（Figmaなどでデザインを確認）
+
+2. **ブランチの作成**（Issueにアサインされたらすぐ）
+   - 詳細は [Gitのルール](git-workflow.md) を参照
+
+3. **デザインカンプの確認**
+   - デザインカンプのファイルを開く
+   - 使用する色、フォント、サイズなどを確認
+   - レスポンシブのブレークポイントを確認
+
+4. **ファイルの作成**（必要な場合）
+   - HTMLファイル、SCSSファイルの作成方法は後述
+
+5. **HTML構造の設計**
+   - セマンティックなHTML5タグを使用
+   - BEM命名規則に従う
+
+6. **SCSS実装**
+   - ファイル名からクラス名を決定
+   - パーシャルファイル（`_variables.scss`など）を活用
+
+7. **画像の配置**
+   - 画像は `assets/images/` ディレクトリに配置
+   - ページごとにフォルダーを分ける（例: `assets/images/top/`, `assets/images/about/`）
+   - HTMLでは `assets/images/` からの相対パスで参照（例: `<img src="assets/images/top/hero.jpg" alt="ヒーロー画像">`）
+
+8. **JavaScript実装**（必要に応じて）
+   - JavaScriptファイルは `assets/js/` ディレクトリに配置
+   - ページごとにファイルを分ける（例: `assets/js/top.js`, `assets/js/common.js`）
+
+9. **レスポンシブ対応**
+   - モバイルファーストで実装
+   - ブレークポイントは `_variables.scss` で定義
+
+10. **動作確認**
+    - ブラウザでHTMLファイルを開いて確認（詳細は後述）
+    - 複数のブラウザで確認（Chrome、Firefox、Safariなど）
+    - レスポンシブデザインを確認（デベロッパーツールで画面サイズを変更）
+
+11. **コミット・PR作成**
+    - 詳細は [Gitのルール](git-workflow.md) を参照
 
 ## 📝 ファイルの作成
 
@@ -91,17 +127,26 @@
 
 1. **ファイルの場所**: プロジェクトのルートディレクトリに作成
    - 例: `about.html`, `service.html`
+   - **確認方法**: VS Codeのエクスプローラーで、`index.html`と同じ階層に作成されているか確認
 
 2. **基本構造のコピー**: `index.html` をコピーして、内容を編集
    ```bash
+   # ターミナルから実行する場合
    cp index.html about.html
    ```
+   > **💡 別の方法**: VS Codeのエクスプローラーで `index.html` を右クリック > 「複製」を選択 > ファイル名を変更
 
 3. **タイトルとクラス名を変更**
    ```html
    <title>会社概要 | Web Craft Studio</title>
    <section class="sectionPageHeader">
    ```
+
+4. **確認**: ブラウザで `about.html` を開いて、正しく表示されるか確認
+   - **方法1**: VS Codeのエクスプローラーで `about.html` を右クリック > 「**Reveal in File Explorer**」（macOS: 「**Finderで表示**」）を選択 > ブラウザで開く
+   - **方法2**: ブラウザのアドレスバーに `file://` で始まるパスを入力（例: `file:///Users/あなたのユーザー名/Local Sites/web-craft-studio/app/public/wp-content/themes/web-craft-studio/about.html`）
+   - **方法3**: VS Codeの拡張機能「**Live Server**」を使用（推奨）
+     - 拡張機能をインストール後、HTMLファイルを右クリック > 「**Open with Live Server**」を選択
 
 ### SCSSファイルの作成（セクション用）
 

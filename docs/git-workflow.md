@@ -10,16 +10,41 @@
 
 ## 🔧 基本操作
 
+### 0. 初回セットアップ（クローン直後）
+
+リポジトリをクローンした直後は、以下の確認をしてください：
+
+```bash
+# 現在のブランチを確認（mainブランチにいるはず）
+git branch
+# 出力例: * main
+
+# リモートリポジトリが正しく設定されているか確認
+git remote -v
+# 出力例:
+# origin  https://github.com/kasuyaofcb/web-craft-studio.git (fetch)
+# origin  https://github.com/kasuyaofcb/web-craft-studio.git (push)
+
+# 最新の状態を取得（初回は不要ですが、念のため）
+git pull origin main
+```
+
+> **💡 確認ポイント**:
+> - `git branch` で `* main` と表示されていればOK
+> - `git remote -v` でリモートURLが表示されればOK
+
 ### 1. ブランチを作成して作業開始
 
 ```bash
-# 最新のmainブランチを取得
+# 最新のmainブランチを取得（他の人が変更を加えた可能性があるため）
 git checkout main
 git pull origin main
 
 # 新しいブランチを作成（例: Issue #12）
 git checkout -b issue-12-fv-hero
 ```
+
+> **💡 注意**: クローン直後で、まだ誰も作業していない場合は `git pull` は不要ですが、念のため実行しても問題ありません。
 
 ### 2. 変更をコミット
 
@@ -33,6 +58,16 @@ git commit -m "feat: ヘッダー部分の実装"
 ```bash
 git push origin issue-12-fv-hero
 ```
+
+> **💡 初回プッシュの場合**: 初めてこのブランチをプッシュする場合は、以下のメッセージが表示されることがあります：
+> ```
+> fatal: The current branch issue-12-fv-hero has no upstream branch.
+> ```
+> その場合は、以下のコマンドを実行：
+> ```bash
+> git push -u origin issue-12-fv-hero
+> ```
+> `-u` オプションで、今後は `git push` だけでプッシュできるようになります。
 
 その後、GitHubでプルリクエストを作成
 
