@@ -1,0 +1,24 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../assets/css/",
+      "savePathSegmentKeys": null,
+      "savePathReplaceSegmentsWith": null
+    }
+  ],
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    "**/vendor/**",
+    "**/partials/**"
+  ],
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "liveSassCompile.settings.includeItems": [
+    "assets/scss/**/*.scss"
+  ]
+}

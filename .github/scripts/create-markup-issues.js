@@ -21,19 +21,21 @@ const REPO_NAME = process.env.GITHUB_REPOSITORY_NAME || '';
 // GitHubトークン（環境変数から取得）
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
 
-// セクション一覧（プロジェクトに合わせてカスタマイズ）
+// セクション一覧（Web Craft Studio TOPページ - プロジェクトに合わせてカスタマイズ可能）
 const SECTIONS = [
-  'TOPページ ファーストビュー（FV）',
-  'TOPページ セクション01',
-  'TOPページ セクション02',
-  'TOPページ セクション03',
-  'TOPページ セクション04',
   'ヘッダー',
+  'TOPページ ファーストビュー（FV）',
+  'TOPページ サービスセクション',
+  'TOPページ 制作実績セクション',
+  'TOPページ スタッフセクション',
+  'TOPページ お客様の声セクション',
+  'TOPページ 最新のお知らせセクション',
+  'TOPページ お問い合わせセクション',
   'フッター',
 ];
 
 // デザインカンプのベースURL（カスタマイズ可能）
-const DESIGN_CAMP_BASE_URL = process.env.DESIGN_CAMP_BASE_URL || '';
+const DESIGN_CAMP_BASE_URL = process.env.DESIGN_CAMP_BASE_URL || 'https://www.figma.com/design/IccA2vQZGGENt8jyXSzKNK/Web-Craft-Studio?node-id=74-2';
 
 /**
  * Issue本文を作成
@@ -152,4 +154,3 @@ if (require.main === module) {
 }
 
 module.exports = { createIssue, createIssueBody };
-

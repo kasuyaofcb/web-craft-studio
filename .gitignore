@@ -1,0 +1,45 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+# .vscode/settings.json は共有するため、.gitignoreから除外
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+# .github/scripts内のnode_modulesも除外
+.github/scripts/node_modules/
+
+# Environment
+.env
+.env.local
+
+# WordPress
+wp-config.php
+.htaccess
+
+# Database
+*.sql
+database/
+
+# Compiled CSS (SCSSから自動生成されるため)
+assets/css/*.css
+assets/css/*.css.map
+!assets/css/.gitkeep
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

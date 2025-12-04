@@ -7,19 +7,21 @@
 REPO_OWNER="${GITHUB_REPOSITORY_OWNER:-}"
 REPO_NAME="${GITHUB_REPOSITORY_NAME:-}"
 
-# セクション一覧（プロジェクトに合わせてカスタマイズ）
+# セクション一覧（Web Craft Studio TOPページ - プロジェクトに合わせてカスタマイズ可能）
 SECTIONS=(
-  "TOPページ ファーストビュー（FV）"
-  "TOPページ セクション01"
-  "TOPページ セクション02"
-  "TOPページ セクション03"
-  "TOPページ セクション04"
   "ヘッダー"
+  "TOPページ ファーストビュー（FV）"
+  "TOPページ サービスセクション"
+  "TOPページ 制作実績セクション"
+  "TOPページ スタッフセクション"
+  "TOPページ お客様の声セクション"
+  "TOPページ 最新のお知らせセクション"
+  "TOPページ お問い合わせセクション"
   "フッター"
 )
 
 # デザインカンプのベースURL（カスタマイズ可能）
-DESIGN_CAMP_BASE_URL=""
+DESIGN_CAMP_BASE_URL="https://www.figma.com/design/IccA2vQZGGENt8jyXSzKNK/Web-Craft-Studio?node-id=74-2"
 
 # GitHub CLIがインストールされているか確認
 if ! command -v gh &> /dev/null; then
@@ -125,4 +127,3 @@ EOF
 done
 
 echo "🎉 すべてのIssue作成が完了しました！"
-

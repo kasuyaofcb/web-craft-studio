@@ -23,7 +23,48 @@ const SECTIONS = [
 
 ## 🚀 使用方法
 
-### 方法1: GitHub CLI（Bash版）
+### 方法1: Node.js版（npm startで実行・推奨）
+
+**最も簡単な方法です。**
+
+#### 1. 必要なパッケージをインストール
+
+```bash
+cd .github/scripts
+npm install
+```
+
+#### 2. 環境変数を設定（初回のみ）
+
+`.github/scripts/` ディレクトリに `.env` ファイルを作成：
+
+```env
+# GitHub認証情報（必須）
+GITHUB_TOKEN=your_github_token_here
+
+# リポジトリ情報（必須）
+GITHUB_REPOSITORY_OWNER=owner_name
+GITHUB_REPOSITORY_NAME=repo_name
+
+# デザインカンプURL（オプション）
+DESIGN_CAMP_BASE_URL=https://example.com/design-camp
+```
+
+**GitHubトークンの作成方法**:
+1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. "Generate new token" をクリック
+3. `repo` スコープを選択
+4. トークンをコピーして `.env` に設定
+
+#### 3. スクリプトを実行
+
+```bash
+npm start
+```
+
+これで、よく使うIssueセットが一括作成されます！
+
+### 方法2: GitHub CLI（Bash版）
 
 #### 1. GitHub CLIをインストール
 
@@ -51,42 +92,13 @@ chmod +x create-markup-issues.sh
 
 リポジトリディレクトリで実行すると、自動的にリポジトリ情報を取得します。
 
-### 方法2: Node.js版
+### 方法3: Node.js版（直接実行）
 
-#### 1. 必要なパッケージをインストール
+方法1と同じですが、`npm start`の代わりに直接実行します：
 
 ```bash
 cd .github/scripts
-npm install @octokit/rest dotenv
-```
-
-#### 2. 環境変数を設定
-
-`.github/scripts/` ディレクトリに `.env` ファイルを作成：
-
-```env
-# GitHub認証情報（必須）
-GITHUB_TOKEN=your_github_token_here
-
-# リポジトリ情報（必須）
-GITHUB_REPOSITORY_OWNER=owner_name
-GITHUB_REPOSITORY_NAME=repo_name
-
-# デザインカンプURL（オプション）
-DESIGN_CAMP_BASE_URL=https://example.com/design-camp
-```
-
-**注意**: `.env` ファイルはGitにコミットしないでください（`.gitignore`に追加済み）
-
-GitHubトークンの作成方法：
-1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. "Generate new token" をクリック
-3. `repo` スコープを選択
-4. トークンをコピーして `.env` に設定
-
-#### 3. スクリプトを実行
-
-```bash
+npm install
 node create-markup-issues.js
 ```
 

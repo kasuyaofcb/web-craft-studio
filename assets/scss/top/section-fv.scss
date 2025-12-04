@@ -1,0 +1,20 @@
+/**
+ * ファーストビューセクション
+ * Issue #XX で実装
+ */
+
+@use '../partials/variables';
+@use '../partials/reset';
+@use '../partials/base';
+@use '../partials/utilities';
+@use '../partials/layout';
+
+.sectionFv {
+  // 基本スタイル（モバイルファースト）
+  // 例: font-size: variables.$font-size-base;
+
+  // メディアクエリはクラス内に記述
+  // @media (min-width: variables.$breakpoint-md) {
+  //   font-size: variables.$font-size-lg;
+  // }
+}

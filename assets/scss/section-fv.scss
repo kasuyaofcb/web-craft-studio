@@ -1,0 +1,33 @@
+/**
+ * ファーストビューセクション（静的サイト用）
+ * Issue #XX で実装
+ *
+ * 注意: このファイルは静的サイトフェーズ（HTML）用です
+ * WordPress化後は assets/scss/top/section-fv.scss に移動します
+ * クラス名は統一ルールに従い、ファイル名から決定: section-fv.scss → sectionFv
+ */
+
+@use 'partials/variables';
+@use 'partials/reset';
+@use 'partials/base';
+@use 'partials/utilities';
+@use 'partials/layout';
+
+/* ファイル名から決定: section-fv.scss → sectionFv */
+.sectionFv {
+  // 基本スタイル（モバイルファースト）
+  // 例: font-size: variables.$font-size-base;
+
+  // メディアクエリはクラス内に記述
+  // @media (min-width: variables.$breakpoint-md) {
+  //   font-size: variables.$font-size-lg;
+  // }
+}
+
+.sectionFv__title {
+  // タイトルスタイル
+}
+
+.sectionFv__description {
+  // 説明文スタイル
+}

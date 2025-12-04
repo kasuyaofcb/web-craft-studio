@@ -4,6 +4,7 @@
   "description": "模写コーディングフェーズ用のIssue一括作成スクリプト",
   "main": "create-markup-issues.js",
   "scripts": {
+    "start": "node create-markup-issues.js",
     "create-issues": "node create-markup-issues.js"
   },
   "keywords": [

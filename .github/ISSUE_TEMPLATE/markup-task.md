@@ -26,8 +26,35 @@ assignees: ""
 
 ## 作業内容チェックリスト
 
+### ファイル作成（必要な場合）
+
+- [ ] **ページファイルの作成**（下層ページの場合）
+  - 担当するページのHTMLファイルが存在しない場合は、必ず作成してください
+  - ファイル名: `{ページ名}.html`（例: `about.html`, `service.html`）
+  - 基本構造は `index.html` を参考にしてください
+- [ ] **SCSSファイルの作成**（セクション用の場合）
+  - 担当するセクション用のSCSSファイルを作成してください
+  - ファイル名: `assets/scss/section-{セクション名}.scss`（例: `section-fv.scss`）
+  - コンパイル先: `assets/css/section-{セクション名}.css`（自動）
+  - 基本構造:
+    ```scss
+    @use 'partials/variables';
+    @use 'partials/reset';
+    @use 'partials/base';
+    @use 'partials/utilities';
+    @use 'partials/layout';
+
+    .{セクションクラス名} {
+      // スタイルを記述
+      // 変数を使用する例: color: $color-primary;
+    }
+    ```
+  - HTMLファイルにCSSリンクを追加してください
+
+### 実装
+
 - [ ] HTML構造をカンプに沿って作成
-- [ ] CSSでスタイルを適用（色、フォント、背景画像、間隔）
+- [ ] SCSSでスタイルを適用（色、フォント、背景画像、間隔）
 - [ ] BEM設計ルールに従ったクラス命名
 - [ ] レスポンシブ対応確認（PC / タブレット / スマホ）
 - [ ] 必要なJSアニメーションの実装（スライダーやフェードなど）
@@ -42,6 +69,9 @@ assignees: ""
 
 ## 補足・注意点
 
+- **ページファイルの作成**: 下層ページ（About、Serviceなど）を担当する場合は、必ずそのページのHTMLファイルを作成してください
+- **SCSSファイルの作成**: セクション用のSCSSファイルは、担当者が作成してください
+- **Live Sass Compiler**: VS Codeの拡張機能「Live Sass Compiler」を使用してください（設定は `.vscode/settings.json` に記載済み）
 - 画像やアイコンは指定のアセットを使用
 - 不明点はメンターに質問して進める
 - 大幅なレイアウト変更は禁止（カンプ準拠）
@@ -50,4 +80,3 @@ assignees: ""
 
 <!-- YYYY/MM/DD 形式で記入 -->
 期限:
-
